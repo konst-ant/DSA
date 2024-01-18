@@ -90,10 +90,10 @@ public class Task31_MaximumPeakBlocks {
 
 
     public static void main(String[] args) {
-//        int[] a = {1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
-        int[] a = {1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1};
-        int[] a = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-        int[] a = {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1};
+        int[] a = {1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
+//        int[] a = {1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1};
+//        int[] a = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+//        int[] a = {1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1};
         Task31_MaximumPeakBlocks maximumPeakBlocks = new Task31_MaximumPeakBlocks();
         System.out.println(maximumPeakBlocks.maximumBlocks(a));
     }
