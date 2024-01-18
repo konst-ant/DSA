@@ -4,21 +4,11 @@ package leetcode2;
 import java.util.*;
 
 /**
- *
- * You are given an integer array coins representing coins of different denominations and an integer amount representing
- * a total amount of money.
- *
+ * You are given an integer array coins representing coins of different denominations and
+ * an integer amount representing a total amount of money.
+ * <p>
  * Write a method given array of coins int[] C and the amount, returns the fewest number of coins that you need
  * to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1
- *
- * public int solution(int[] C, int amount);
- *
- * You may assume that you have an infinite number of each kind of coin.
- *
- *
- * For example
- * given C = {1, 2, 5} and amount 11, returns 3
- *
  */
 public class CoinChange {
 
