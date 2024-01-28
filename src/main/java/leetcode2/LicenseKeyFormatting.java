@@ -1,6 +1,8 @@
 package leetcode2;
 
 
+import java.util.Arrays;
+
 /**
  *
  * You are given a license key represented as a string s that consists of only alphanumeric characters
@@ -16,12 +18,51 @@ public class LicenseKeyFormatting {
 
     public static void main(String[] args) {
         LicenseKeyFormatting licenseKeyFormatting = new LicenseKeyFormatting();
-        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 7)) ;
-        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 2)) ;
-        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 3)) ;
-        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 4)) ;
+        System.out.println(licenseKeyFormatting.reformat2("abcd-efgh", 7)) ;
+        System.out.println(licenseKeyFormatting.reformat2("abcd-efgh-ijkl-mnop", 7)) ;
+        System.out.println(licenseKeyFormatting.reformat2("abcd-efgh-ijkl-mnop", 2)) ;
+        System.out.println(licenseKeyFormatting.reformat2("abcd-efgh-ijkl-mnop", 3)) ;
+        System.out.println(licenseKeyFormatting.reformat2("abcd-efgh-ijkl-mnop", 4)) ;
     }
 
+    /**
+     * Alternatively operate on pre-allocated result char[]
+     * Here we traverse the input string in reverse order
+     */
+    public String reformat2(String s, int k) {
+
+        // number of dashes in original string
+        int dashes = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '-') {
+                dashes++;
+            }
+        }
+
+        int newDashes = (int) Math.ceil((double) (s.length() - dashes) / k) -1;
+        char[] result = new char[s.length() - dashes + newDashes];
+
+        int j = result.length - 1; // pointer on result
+        int groupCounter = 0;   // accounting in groups separated with dashes
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (groupCounter == k) {
+                result[j--] = '-';
+                groupCounter=0;
+            }
+
+            if (s.charAt(i) != '-') {
+                result[j--] = s.charAt(i);
+                groupCounter++;
+            }
+        }
+
+        return Arrays.toString(result).toUpperCase();
+    }
+
+    /**
+     * Use reversing original string for convenient processing, and in the end reverse it back
+     *
+     */
     public String reformat(String s, int k) {
         StringBuilder result = new StringBuilder();
         StringBuilder batch = new StringBuilder();
