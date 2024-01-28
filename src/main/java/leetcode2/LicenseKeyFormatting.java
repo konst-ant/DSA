@@ -1,50 +1,52 @@
 package leetcode2;
 
+
+/**
+ *
+ * You are given a license key represented as a string s that consists of only alphanumeric characters
+ * and dashes. The string is separated into n + 1 groups by n dashes. You are also given an integer k.
+ *
+ * We want to reformat the string s such that each group contains exactly k characters, except for the
+ * first group, which could be shorter than k but still must contain at least one character. Furthermore,
+ * there must be a dash inserted between two groups, and you should convert all lowercase letters to
+ * uppercase.
+ *
+ */
 public class LicenseKeyFormatting {
 
     public static void main(String[] args) {
-        new LicenseKeyFormatting();
+        LicenseKeyFormatting licenseKeyFormatting = new LicenseKeyFormatting();
+        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 7)) ;
+        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 2)) ;
+        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 3)) ;
+        System.out.println(licenseKeyFormatting.reformat("abcd-efgh-ijkl-mnop", 4)) ;
     }
 
-    public LicenseKeyFormatting() {
-        System.out.println(licenseKeyFormatting("2", 2));
-    }
-
-    public String licenseKeyFormatting(String S, int K) {
-        int len = S.length();
-        char[] c = S.toCharArray();
-
-        int dashes = 0;
-        for (int i = len - 1; i >= 0; i--) {
-            if (c[i] == '-') dashes++;
-        }
-
-        int numSymbols = len - dashes;
-        numSymbols += (numSymbols - 1) / K;
-        char[] result = new char[numSymbols];
-        int upperDiff = 'a' - 'A';
-        int inserted = 0;
-        int pos = numSymbols - 1;
-
-        for (int i = len - 1; i >= 0; i--) {
-            if (c[i] == '-') {
-                continue;
-            }
-
-            if (inserted > 0 && inserted % K == 0) {
-                result[pos--] = '-';
-            }
-
-            if (c[i] >= 'a') {
-                result[pos--] = (char)(c[i] - upperDiff);
-                inserted++;
-            }
-            else {
-                result[pos--] = c[i];
-                inserted++;
+    public String reformat(String s, int k) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder batch = new StringBuilder();
+        int counter=0;
+        for (Character c: (new StringBuilder(s)).reverse().toString().toCharArray()) {
+            if (c != '-') {
+                if (counter == k) {
+                    counter = 0;
+                    result.append(batch);
+                    /**
+                     * Note: we don't have to care if an excessive trailing dash is added
+                     * because we enter into this block when another character is on the way, and the
+                     * previous block was completed. So if we end up exactly with k-size batch, this
+                     * will not be processed here, but outside this block below
+                     */
+                    result.append('-');
+                    batch.delete(0, batch.length());
+                }
+                batch.append(c);
+                counter++;
             }
         }
 
-        return new String(result);
+        if (batch.length() > 0) result.append(batch);
+        result.reverse();
+        return result.toString().toUpperCase();
     }
 }
