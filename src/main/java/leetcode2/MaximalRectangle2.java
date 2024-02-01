@@ -1,6 +1,6 @@
 package leetcode2;
 
-public class MaximalRectangle {
+public class MaximalRectangle2 {
 
     public static void main(String[] args) {
         run(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}}); // 6
@@ -8,7 +8,7 @@ public class MaximalRectangle {
     }
 
     private static void run(char[][] matrix) {
-        System.out.println(new MaximalRectangle().maximalRectangle(matrix));
+        System.out.println(new MaximalRectangle2().maximalRectangle(matrix));
     }
 
     public int maximalRectangle(char[][] matrix) {
