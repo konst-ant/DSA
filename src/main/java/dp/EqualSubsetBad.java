@@ -6,15 +6,16 @@ import java.util.List;
 /**
  * You are given a set of positive integers.
  * Write a method to determine if it is feasible to divide the input set into two subsets equal on the sum
+ *
  */
-public class EqualSubsetsBad {
+public class EqualSubsetBad {
     public static void main(String[] args) {
-        EqualSubsetsBad equalSubsetsBad = new EqualSubsetsBad();
+        EqualSubsetBad equalSubsetBad = new EqualSubsetBad();
 //        Integer[] arr = new Integer[]{1, 2, 3, 4, 5, 6};
         Integer[] arr = new Integer[]{1, 1, 3, 4, 7};
         List<Integer> subset= new ArrayList<>();
-        int fullSum = equalSubsetsBad.sum(List.of(arr));
-        System.out.println(equalSubsetsBad.canDivide(arr, subset, arr.length - 1, fullSum) ? "Yes" : "No");
+        int fullSum = equalSubsetBad.sum(List.of(arr));
+        System.out.println(equalSubsetBad.canDivide(arr, subset, arr.length - 1, fullSum) ? "Yes" : "No");
     }
 
     private boolean canDivide(Integer[] arr, List<Integer> subset, int index, int fullSum) {

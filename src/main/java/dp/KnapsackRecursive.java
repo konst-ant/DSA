@@ -25,6 +25,8 @@ public class KnapsackRecursive {
     }
 
     /**
+     * Recursive, or up-bottom DP
+     *
      * For all combinations - we can either include or exclude the current item, so two cases, and max() between them:
      * - profit of current  item + profit of remaining items for remaining capacity reduced by capacity of current item
      * - profit of remaining items excluding current item for same capacity

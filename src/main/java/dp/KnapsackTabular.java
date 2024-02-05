@@ -17,12 +17,13 @@ public class KnapsackTabular {
 
     public static void main(String[] args) {
         KnapsackTabular knapsack = new KnapsackTabular();
+        /* find max profit */
 //        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 4));
 //        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 5));
         System.out.println("max profit: " + knapsack.dp(new int[]{1,6,10,16}, new int[]{1,2,3,5}, 7));
 //        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6, 8, 5, 7, 9, 1}, new int[]{2, 1, 2, 6, 3, 5, 4, 7}, 15));
 
-        /* test items */
+        /* find item set delivering max profit */
         Integer[] items = knapsack.dpItems(new int[]{1, 6, 10, 16}, new int[]{1, 2, 3, 5}, 7);
         System.out.println("Max profit item set: ");
         for (int i : items) {
@@ -32,6 +33,7 @@ public class KnapsackTabular {
 
 
     /**
+     * Tabular, or bottom-up DP
      *
      * As in resursion, we compose the algo of two possible cases
      * - using next item in hand if it fits current capacity + add profit of remaining items with remaining capacity
@@ -39,6 +41,8 @@ public class KnapsackTabular {
      *
      * And we're moving here bottom-up, starting of the 0-indexes, which are pre-filled in dp[][] matrix row and column,
      * and relying on already pre-filled values
+     *
+     * Time complexity - O(dp[][].length * dp[0][].length)
      *
      */
     public int dp(int[] profits, int[] weights, int capacity) {
