@@ -1,4 +1,4 @@
-package passedInterviews;
+package pastInterviews;
 
 import java.util.ArrayList;
 

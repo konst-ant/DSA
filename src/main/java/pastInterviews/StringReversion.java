@@ -1,4 +1,4 @@
-package passedInterviews;
+package pastInterviews;
 
 public class StringReversion {
     public static void main(String[] args) {

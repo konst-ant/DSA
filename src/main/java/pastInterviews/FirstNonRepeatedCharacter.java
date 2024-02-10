@@ -1,4 +1,4 @@
-package passedInterviews;
+package pastInterviews;
 
 import java.util.function.Function;
 import java.util.LinkedHashMap;

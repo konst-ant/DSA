@@ -1,4 +1,4 @@
-package passedInterviews;
+package pastInterviews;
 
 /**
  * Solution from Codility for the task for Atlassian:
