@@ -6,11 +6,27 @@ package dp;
  * Write a method to determine if it is feasible to divide the input set into two subsets equal on the sum
  *
  */
-public class EqualSubsetRecursive {
+public class TwoEqualSubsetsRecursive {
     public static void main(String[] args) {
-        EqualSubsetRecursive equalSubsetRecursive = new EqualSubsetRecursive();
+        TwoEqualSubsetsRecursive twoEqualSubsetsRecursive = new TwoEqualSubsetsRecursive();
+
+        /*
+         Should be true : {1, 4} & {2, 3}
+         */
         int[] arr = new int[]{1, 2, 3, 4};
-        System.out.println(equalSubsetRecursive.canDivide(arr) ? "Yes" : "No");
+        System.out.println(twoEqualSubsetsRecursive.canDivide(arr) ? "Yes" : "No");
+
+        /*
+         Should be true : {1, 3, 4} & {1, 7}
+         */
+//        int[] arr = new int[]{1, 1, 3, 4, 7};
+//        System.out.println(twoEqualSubsetsRecursive.canDivide(arr) ? "Yes" : "No");
+
+        /*
+         Should be false :
+         */
+//        int[] arr = new int[]{2, 3, 4, 6};
+//        System.out.println(twoEqualSubsetsRecursive.canDivide(arr) ? "Yes" : "No");
     }
 
     public boolean canDivide(int[] arr) {

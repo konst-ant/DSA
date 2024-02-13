@@ -7,14 +7,21 @@ package dp;
  * public int subsets(int[] arr, int s)
  *
  */
-public class SubsetSumRecursive {
+public class HowManySubsetsOfSumRecursive {
     public static void main(String[] args) {
-        SubsetSumRecursive subsetSumRecursive = new SubsetSumRecursive();
+        HowManySubsetsOfSumRecursive howManySubsetsOfSumRecursive = new HowManySubsetsOfSumRecursive();
+        /*
+        should deliver 3 : {1, 1, 2}, {1, 3}, {1, 3}
+         */
 //        int[] arr = new int[]{1, 1, 2, 3};
 //        int sum = 4;
+
+        /*
+        should deliver 3 : {2, 7}, {1, 7, 1}, {1, 2, 1, 5}
+         */
         int[] arr = new int[]{1, 2, 7, 1, 5};
         int sum = 9;
-        System.out.println(subsetSumRecursive.subsets(arr, new Integer[arr.length][sum + 1], 0, sum));
+        System.out.println(howManySubsetsOfSumRecursive.subsets(arr, new Integer[arr.length][sum + 1], 0, sum));
     }
 
     private int subsets(int[] arr, Integer[][] dp, int index, int s) {

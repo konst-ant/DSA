@@ -1,15 +1,13 @@
 package dp;
 
 
-import javaLanguage.privateconstructor.B;
-
 /**
  * You are given a set of positive integers.
  * Write a method to determine if it is feasible to divide the input set into two subsets equal on the sum
  */
-public class EqualSubsetTabular {
+public class TwoEqualSubsetsTabular {
     public static void main(String[] args) {
-        EqualSubsetTabular equalSubsetRecursive = new EqualSubsetTabular();
+        TwoEqualSubsetsTabular equalSubsetRecursive = new TwoEqualSubsetsTabular();
         int[] arr = new int[]{1, 2, 3, 4};
         System.out.println(equalSubsetRecursive.canDivide(arr) ? "Yes" : "No");
     }

@@ -8,14 +8,14 @@ import java.util.List;
  * Write a method to determine if it is feasible to divide the input set into two subsets equal on the sum
  *
  */
-public class EqualSubsetBad {
+public class TwoEqualSubsetsBad {
     public static void main(String[] args) {
-        EqualSubsetBad equalSubsetBad = new EqualSubsetBad();
+        TwoEqualSubsetsBad twoEqualSubsetsBad = new TwoEqualSubsetsBad();
 //        Integer[] arr = new Integer[]{1, 2, 3, 4, 5, 6};
         Integer[] arr = new Integer[]{1, 1, 3, 4, 7};
         List<Integer> subset= new ArrayList<>();
-        int fullSum = equalSubsetBad.sum(List.of(arr));
-        System.out.println(equalSubsetBad.canDivide(arr, subset, arr.length - 1, fullSum) ? "Yes" : "No");
+        int fullSum = twoEqualSubsetsBad.sum(List.of(arr));
+        System.out.println(twoEqualSubsetsBad.canDivide(arr, subset, arr.length - 1, fullSum) ? "Yes" : "No");
     }
 
     private boolean canDivide(Integer[] arr, List<Integer> subset, int index, int fullSum) {

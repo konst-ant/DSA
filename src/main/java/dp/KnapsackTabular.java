@@ -17,20 +17,28 @@ public class KnapsackTabular {
 
     public static void main(String[] args) {
         KnapsackTabular knapsack = new KnapsackTabular();
-        /* find max profit */
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 4));
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 5));
-        System.out.println("max profit: " + knapsack.dp(new int[]{1,6,10,16}, new int[]{1,2,3,5}, 7));
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 4, 6, 8, 5, 7, 9, 1}, new int[]{2, 1, 2, 6, 3, 5, 4, 7}, 15));
+        /* Find max profit.
+           Should return 10 : for subset indexes {2, 3}
+         */
+        System.out.println("max profit: " + knapsack.dp(new int[]{ 2, 3, 1, 4 }, new int[]{ 4, 5, 3, 7 }, 5));
+
+//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 4));
+//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 5));
+//        System.out.println("max profit: " + knapsack.dp(new int[]{1,2,3,5}, new int[]{1,6,10,16}, 7));
+//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2, 6, 3, 5, 4, 7}, new int[]{2, 4, 6, 8, 5, 7, 9, 1}, 15));
 
         /* find item set delivering max profit */
-        Integer[] items = knapsack.dpItems(new int[]{1, 6, 10, 16}, new int[]{1, 2, 3, 5}, 7);
+        Integer[] items = knapsack.dpItems(new int[]{ 2, 3, 1, 4 }, new int[]{ 4, 5, 3, 7 }, 5);
         System.out.println("Max profit item set: ");
-        for (int i : items) {
+        knapsack.print(items);
+    }
+
+
+    public void print(Integer[] arr) {
+        for (int i : arr) {
             System.out.print(i + " ");
         }
     }
-
 
     /**
      * Tabular, or bottom-up DP
@@ -45,7 +53,7 @@ public class KnapsackTabular {
      * Time complexity - O(dp[][].length * dp[0][].length)
      *
      */
-    public int dp(int[] profits, int[] weights, int capacity) {
+    public int dp(int[] weights, int[] profits, int capacity) {
         int[][] dp = new int[profits.length][capacity + 1];
 
         /*
@@ -90,7 +98,7 @@ public class KnapsackTabular {
      *
      * @return - the array of item indicies composing the optimal subset
      */
-    public Integer[] dpItems(int[] profits, int[] weights, int capacity) {
+    public Integer[] dpItems(int[] weights, int[] profits, int capacity) {
         int[][] dp = new int[profits.length][capacity + 1];
 
         /*

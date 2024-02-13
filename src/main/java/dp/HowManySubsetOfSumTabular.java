@@ -6,14 +6,14 @@ package dp;
  * <p>
  * public int subsets(int[] arr, int s)
  */
-public class SubsetSumTabular {
+public class HowManySubsetOfSumTabular {
     public static void main(String[] args) {
-        SubsetSumTabular subsetSumTabularRecursive = new SubsetSumTabular();
+        HowManySubsetOfSumTabular howManySubsetOfSumTabularRecursive = new HowManySubsetOfSumTabular();
         int[] arr = new int[]{1, 1, 2, 3};
         int sum = 4;
 //        int[] arr = new int[]{1, 2, 7, 1, 5};
 //        int sum = 9;
-        System.out.println(subsetSumTabularRecursive.subsets(arr, sum));
+        System.out.println(howManySubsetOfSumTabularRecursive.subsets(arr, sum));
     }
 
     private int subsets(int[] arr, int s) {
@@ -22,7 +22,10 @@ public class SubsetSumTabular {
 
         /*
           a subtle thing here, for sum == 0 we can always find subset regardless of what arr[] is,
-          that will be empty subset. It's contr-intuiteve, however with tabular method you need to be very formal
+          that will be empty subset. It's contr-intuitive, however with tabular method you need to be very formal
+
+          So, life hack I think is, if in some dp task you occasionally follow different logic, thinking that dp[i][0]
+          should all be 0 and getting incorrect result, try change it into dp[i][0] = 1
          */
         for (int i = 0; i < dp.length; i++) {
             dp[i][0] = 1;

@@ -13,13 +13,19 @@ public class KnapsackRecursive {
 
     public static void main(String[] args) {
         KnapsackRecursive knapsack = new KnapsackRecursive();
-//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 4));
-//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 4, 6}, new int[]{2, 1, 2}, 5));
-        System.out.println("max profit: " + knapsack.solution(new int[]{1,6,10,16}, new int[]{1,2,3,5}, 7));
-//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 4, 6, 8, 5, 7, 9, 1}, new int[]{2, 1, 2, 6, 3, 5, 4, 7}, 15));
+        /*
+         Should return 10 : for subset indexes {2, 3}
+         */
+        System.out.println("max profit: " + knapsack.solution(new int[]{ 2, 3, 1, 4 }, new int[]{ 4, 5, 3, 7 }, 5));
+
+
+//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 1, 2}, new int[]{2, 4, 6},4));
+//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 5));
+//        System.out.println("max profit: " + knapsack.solution(new int[]{1,2,3,5}, new int[]{1,6,10,16}, 7));
+//        System.out.println("max profit: " + knapsack.solution(new int[]{2, 1, 2, 6, 3, 5, 4, 7}, new int[]{2, 4, 6, 8, 5, 7, 9, 1}, 15));
     }
 
-    public int solution(int[] profits, int[] weights, int capacity) {
+    public int solution(int[] weights, int[] profits, int capacity) {
         int[][] dp = new int[profits.length][capacity + 1];
         return dp(profits, weights, dp, 0, capacity);
     }
