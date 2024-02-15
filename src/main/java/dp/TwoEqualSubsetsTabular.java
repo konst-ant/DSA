@@ -16,13 +16,23 @@ public class TwoEqualSubsetsTabular {
     /**
      * Tabular, or bottom-up DP
      * <p>
-     * Essentially, we want to find if we can make all possible sums with every subset.
-     * This means, dp[i][s] will be 'true' if we can make sum 's' from the first 'i' numbers.
+     * To understand solution, we have to transform task to the following concept.
+     * It's possible to equally divide the array if we can find a subset, which gives s/2 in sum.
+     * (here s - is the sum of all array elements). So we shift our mindset to considering only one subset,
+     * not two (!) and find that subset.
+     *
+     * Note: as side effect, it directly follows that is s is odd - the answer is false right away
+     *
+     * Then with tabular dp, our mindset is: we are considering one subset, and building up the sequence
+     * from 0 items and 0 sum all the way to all arr[] items and sum = s/2. And we need to see if we can
+     * compose that sum for that subset or not.
+     *
      * <p>
      * So, for each number at index 'i' (0 <= i < num.length) and sum 's' (0 <= s <= S/2), we have two options:
      * <p>
      * Exclude the number. In this case, we will see if we can get 's' from the subset excluding this number: dp[i-1][s]
-     * Include the number if its value is not more than 's'. In this case, we will see if we can find a subset to get the remaining sum: dp[i-1][s-num[i]]
+     * Include the number if its value is not more than 's'. In this case, we will see if we can find a subset to get
+     * the remaining sum: dp[i-1][s-num[i]]
      *
      */
     public boolean canDivide(int[] arr) {
