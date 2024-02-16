@@ -1,4 +1,4 @@
-package struct;
+package cache;
 
 public class Node<V> {
     public Node<V> next;
