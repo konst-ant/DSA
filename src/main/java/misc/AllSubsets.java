@@ -9,7 +9,8 @@ import java.util.List;
  */
 public class AllSubsets {
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3};
+//        int[] arr = new int[]{1, 2, 3};
+        int[] arr = new int[]{2, 3, 6, 7};
         List<Integer> subset= new ArrayList<>();
 
         subsets(arr, subset, arr.length - 1);
@@ -27,7 +28,11 @@ public class AllSubsets {
             for (int i : subset) {
                 System.out.print(i + " ");
             }
-            System.out.println();
+            int sum=0;
+            for (int i : subset) {
+                sum += i;
+            }
+            System.out.println(", Subset sum: " + sum);
         }
     }
 }
