@@ -25,3 +25,6 @@ build/
 ### snapshots for task description ###
 descriptions/
 diagrams/
+
+## terraform
+.terraform/
