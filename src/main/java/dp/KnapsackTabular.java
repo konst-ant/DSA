@@ -22,14 +22,26 @@ public class KnapsackTabular {
          */
         System.out.println("max profit: " + knapsack.dp(new int[]{ 2, 3, 1, 4 }, new int[]{ 4, 5, 3, 7 }, 5));
 
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 4));
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 5));
-//        System.out.println("max profit: " + knapsack.dp(new int[]{1,2,3,5}, new int[]{1,6,10,16}, 7));
-//        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2, 6, 3, 5, 4, 7}, new int[]{2, 4, 6, 8, 5, 7, 9, 1}, 15));
+        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 4));
+        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 5));
+        System.out.println("max profit: " + knapsack.dp(new int[]{1,2,3,5}, new int[]{1,6,10,16}, 7));
+        System.out.println("max profit: " + knapsack.dp(new int[]{2, 1, 2, 6, 3, 5, 4, 7}, new int[]{2, 4, 6, 8, 5, 7, 9, 1}, 15));
 
         /* find item set delivering max profit */
         Integer[] items = knapsack.dpItems(new int[]{ 2, 3, 1, 4 }, new int[]{ 4, 5, 3, 7 }, 5);
-        System.out.println("Max profit item set: ");
+        System.out.println("Max profit item set (indexes): ");
+        knapsack.print(items);
+        items = knapsack.dpItems(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 4);
+        System.out.println("Max profit item set (indexes): ");
+        knapsack.print(items);
+        items = knapsack.dpItems(new int[]{2, 1, 2}, new int[]{2, 4, 6}, 5);
+        System.out.println("Max profit item set (indexes): ");
+        knapsack.print(items);
+        items = knapsack.dpItems(new int[]{1,2,3,5}, new int[]{1,6,10,16}, 7);
+        System.out.println("Max profit item set (indexes): ");
+        knapsack.print(items);
+        items = knapsack.dpItems(new int[]{2, 1, 2, 6, 3, 5, 4, 7}, new int[]{2, 4, 6, 8, 5, 7, 9, 1}, 15);
+        System.out.println("Max profit item set (indexes): ");
         knapsack.print(items);
     }
 
@@ -139,16 +151,24 @@ public class KnapsackTabular {
          - otherwise, we would jump along the current row back on the length of included item weight
 
          */
+
         int c = capacity;
         int i = profits.length -1;
         List<Integer> result = new ArrayList<>();
-        while (c > 0) {
-            if (dp[i - 1][c] == dp[i][c]) {
-                i--;
-            } else {
+        /*
+           As soon as we reach 0-item, we can't check horizontally up,
+           hence 0-item is included only if it is not-greater than remaining c
+         */
+        while (c > 0 && i > 0) {
+            if (dp[i - 1][c] != dp[i][c]) {
                 result.add(i);
                 c = c - weights[i];
             }
+            i--;
+        }
+
+        if (weights[i] <= c) {
+            result.add(i);
         }
 
         Collections.reverse(result);
