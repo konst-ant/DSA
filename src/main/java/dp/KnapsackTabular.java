@@ -127,10 +127,6 @@ public class KnapsackTabular {
             if (profits[0] <= i) dp[0][i] = weights[0];
         }
 
-        /*
-
-
-         */
         for (int i = 1; i < profits.length; i++) {
             for (int c = 1; c <= capacity; c++) {
                 int profit1 = 0;

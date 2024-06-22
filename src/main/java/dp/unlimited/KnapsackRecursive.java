@@ -21,22 +21,15 @@ package dp.unlimited;
  * would return 80 for the combination {2 - Apple, 1 - Melon}
  */
 public class KnapsackRecursive {
-    public static void main(String[] args) {
-        KnapsackRecursive knapsackRecursive = new KnapsackRecursive();
-        int[] weights = new int[]{1, 2, 3};
-        int[] profits = new int[]{15, 20, 50};
-        int capacity  = 5;
-        int[][] dp = new int[weights.length][capacity + 1];
-        System.out.println(knapsackRecursive.solution(weights, profits, weights.length - 1, capacity, dp));
-    }
+    // See tests
 
-    int solution(int[] weight, int[] profit, int index, int sum, int[][] dp) {
-        if (sum < 0 || index < 0) {
+    int solution(int[] weight, int[] profit, int index, int availableCapacity, int[][] dp) {
+        if (availableCapacity < 0 || index < 0) {
             return 0;
         }
 
-        if (dp[index][sum] != 0) {
-            return dp[index][sum];
+        if (dp[index][availableCapacity] != 0) {
+            return dp[index][availableCapacity];
         }
 
         /* two cases:
@@ -44,11 +37,11 @@ public class KnapsackRecursive {
             - we skip an item
          */
         int sum1 = 0;
-        if (sum - weight[index] >= 0) {
-            sum1 = profit[index] + solution(weight, profit, index, sum - weight[index], dp);
+        if (availableCapacity - weight[index] >= 0) {
+            sum1 = profit[index] + solution(weight, profit, index, availableCapacity - weight[index], dp);
         }
-        int sum2 = solution(weight, profit, index - 1, sum, dp);
-        dp[index][sum] = Math.max(sum1, sum2);
-        return dp[index][sum];
+        int sum2 = solution(weight, profit, index - 1, availableCapacity, dp);
+        dp[index][availableCapacity] = Math.max(sum1, sum2);
+        return dp[index][availableCapacity];
     }
 }
