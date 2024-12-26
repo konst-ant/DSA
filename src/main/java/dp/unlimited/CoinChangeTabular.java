@@ -7,15 +7,11 @@ package dp.unlimited;
  *  public int count(int[] coins, int sum)
  * <p>
  * Example:
- * Denominations: {1,2,3}
- * Total amount: 5
- * Output: 5
- * Explanation: There are five ways to make the change for '5', here are those ways:
- *   1. {1,1,1,1,1}
- *   2. {1,1,1,2}
- *   3. {1,2,2}
- *   4. {1,1,3}
- *   5. {2,3}
+ * Coins: {1,2,3}
+ * sum: 5
+ * Result: 5
+ * All possibilities to change 5 with coin set:
+ * {1,1,1,1,1}, {1,1,1,2}, {1,2,2}, {1,1,3}, {2,3}
  */
 public class CoinChangeTabular {
 

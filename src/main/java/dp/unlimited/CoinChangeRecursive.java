@@ -1,9 +1,17 @@
 package dp.unlimited;
 
 /**
- * Given unlimited supply of coins of given denominations and the required sum amount,
- * count number of variants the sum can be composed of coins
+ * Given unlimited amount of coins of given denominations (int[] coins) and sum
+ * find number of all possible ways to make up the sum using that denominations.
  *
+ *  public int count(int[] coins, int sum)
+ * <p>
+ * Example:
+ * Coins: {1,2,3}
+ * sum: 5
+ * Result: 5
+ * All possibilities to change 5 with coin set:
+ * {1,1,1,1,1}, {1,1,1,2}, {1,2,2}, {1,1,3}, {2,3}
  */
 public class CoinChangeRecursive {
 

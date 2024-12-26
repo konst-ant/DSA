@@ -7,15 +7,15 @@ package dp.unlimited;
  *  public int minimumNumberOfCoins(int[] coins, int sum)
  * <p>
  * Examples:
- * Denominations: {1,2,3}
- * Total amount: 5
- * Output: 2
- * Explanation: We need a minimum of two coins {2,3} to make a total of '5'
+ * Coins= {1,2,3}
+ * sum: 5
+ * Result: 2
+ * Min set of two coins {2,3} will make 5
  *
- * Denominations: {1,2,3}
- * Total amount: 11
- * Output: 4
- * Explanation: We need a minimum of four coins {2,3,3,3} to make a total of '11'
+ * Coins: {1,2,3}
+ * sum: 11
+ * Result: 4
+ * Min set of two coins {2,3,3,3} will make 11
  */
 public class MinimumCoinChangeTabular {
 
