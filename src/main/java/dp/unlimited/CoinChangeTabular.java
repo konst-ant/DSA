@@ -1,5 +1,22 @@
 package dp.unlimited;
 
+/**
+ * Given unlimited amount of coins of given denominations (int[] coins) and sum
+ * find number of all possible ways to make up the sum using that denominations.
+ *
+ *  public int count(int[] coins, int sum)
+ * <p>
+ * Example:
+ * Denominations: {1,2,3}
+ * Total amount: 5
+ * Output: 5
+ * Explanation: There are five ways to make the change for '5', here are those ways:
+ *   1. {1,1,1,1,1}
+ *   2. {1,1,1,2}
+ *   3. {1,2,2}
+ *   4. {1,1,3}
+ *   5. {2,3}
+ */
 public class CoinChangeTabular {
 
     public int count(int[] coins, int sum) {
