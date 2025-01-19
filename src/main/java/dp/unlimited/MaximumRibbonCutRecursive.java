@@ -44,8 +44,12 @@ public class MaximumRibbonCutRecursive {
             return memo[piecesIndex][length];
         }
 
-        // if with this recursion stack ribbon can't be cut without left over, return -1 being propagated up stack.
-        // without it the algo will be counting for left over cases as legitimate
+        // If with this recursion stack ribbon can't be cut without left over, return Integer.MIN_VALUE being propagated up stack.
+        // Then Integer.MIN_VALUE even with + 1 add-on to it the result up-the-stack will remain very big negative integer,
+        // which will be ignored in favour of any other constructive call chain and effectively exclude call chain with the piece
+        // not fitted the ribbon.
+        //
+        // Without it the algo will be counting for left over cases as legitimate
         if (pieces[piecesIndex] > length) {
             memo[piecesIndex][length] = Integer.MIN_VALUE;
             return memo[piecesIndex][length];
