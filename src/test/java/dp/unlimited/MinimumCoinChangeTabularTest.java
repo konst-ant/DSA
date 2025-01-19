@@ -10,7 +10,7 @@ class MinimumCoinChangeTabularTest {
     public void shouldReturn2() {
         int[] coins = new int[]{1,2,3};
         int amount = 5;
-        MinimumCoinChangeTabular minimumCoinChangeTabular = new MinimumCoinChangeTabular();
+        MinimumCoinChangeTabular2 minimumCoinChangeTabular = new MinimumCoinChangeTabular2();
         assertEquals(2, minimumCoinChangeTabular.minimumNumberOfCoins(coins, amount));
     }
 
@@ -19,7 +19,7 @@ class MinimumCoinChangeTabularTest {
     public void shouldReturn4() {
         int[] coins = new int[]{1, 2, 3};
         int amount = 11;
-        MinimumCoinChangeTabular minimumCoinChangeTabular = new MinimumCoinChangeTabular();
+        MinimumCoinChangeTabular2 minimumCoinChangeTabular = new MinimumCoinChangeTabular2();
         assertEquals(4, minimumCoinChangeTabular.minimumNumberOfCoins(coins, amount));
     }
 
