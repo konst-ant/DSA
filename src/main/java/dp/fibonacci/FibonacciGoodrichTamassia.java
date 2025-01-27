@@ -1,6 +1,6 @@
-package misc;
+package dp.fibonacci;
 
-public class Fibonacci {
+public class FibonacciGoodrichTamassia {
 
     /** Returns the nth Fibonacci number (inefficiently). */
     public static long fibonacciBad(int n) {
@@ -22,11 +22,6 @@ public class Fibonacci {
         }
     }
 
-    /** Don't call this (infinite) version. */
-    public static int fibonacci(int n) {
-        return fibonacci(n);      // After all $F_n$ does equal $F_n$
-    }
-
     public static void main(String[] args) {
         final int limit = 50;
 
@@ -38,9 +33,6 @@ public class Fibonacci {
         System.out.println("The bad...");
         for (int n = 0; n < limit; n++)
             System.out.println(n + ": " + fibonacciBad(n));
-
-        // Even worse...
-        fibonacci(10); // the infinite one
     }
 
 }
