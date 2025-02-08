@@ -38,6 +38,7 @@ public class StairCaseRecursive {
         }
 
         // memoization - if not saved, calculate it and save, otherwise just return
+        // essentially the semantics: we can step from our current staircase position with 1 stair, 2 stairs, or 3 stairs
         if (dp[n] == 0) {
             dp[n] = countWays(n - 1) + countWays(n - 2) + countWays(n - 3);
         }

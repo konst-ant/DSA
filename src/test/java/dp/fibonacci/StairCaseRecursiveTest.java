@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Use same test for StairCaseTabular
+ */
 class StairCaseRecursiveTest {
     @Test
     public void shouldReturn4() {
