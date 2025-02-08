@@ -17,6 +17,10 @@ package dp.fibonacci;
  *
  * Note: alternative way to implement is to take all permutations {@link misc.AllPermutations} and count
  * all that in sum give n
+ *
+ * Note: we can clearly see that this problem follows the Fibonacci number pattern. The only difference is
+ * that in Fibonacci numbers every number is a sum of the two preceding numbers, whereas in this problem
+ * every count is a sum of three preceding counts
  */
 public class StairCaseRecursive {
 
