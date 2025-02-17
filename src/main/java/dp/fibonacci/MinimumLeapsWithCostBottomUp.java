@@ -31,10 +31,6 @@ public class MinimumLeapsWithCostBottomUp
         dp[2] = costs[0] + costs[2];
 
         for (int i = 3; i < costs.length; i++) {
-            dp[i] = Integer.MAX_VALUE;
-        }
-
-        for (int i = 3; i < costs.length; i++) {
             // we can reach the top either jumping off the current stair from (dp) of stair -1, or (dp) of stair -2
             // (that is possible)
             //
