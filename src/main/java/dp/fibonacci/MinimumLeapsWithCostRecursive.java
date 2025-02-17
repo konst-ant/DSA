@@ -15,6 +15,12 @@ package dp.fibonacci;
  * Result: 3
  * Cost is 1+2 with path {0, 3, top}
  *
+ * n : 4
+ * costs = {2,3,4,5}
+ * Result: 5
+ * Cost is 2+3 with path {0, 1, top}
+ *
+ *
  */
 public class MinimumLeapsWithCostRecursive
 {
