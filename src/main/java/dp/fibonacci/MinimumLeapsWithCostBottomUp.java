@@ -20,27 +20,37 @@ public class MinimumLeapsWithCostBottomUp
 {
     public int cost(int n, int[] costs) {
 
-        // dp - semantically stores the minimum cost of REACHING THAT STAIR
-        // (not hopping over! which is different from task definition about hopping over)
-        // and that kind of dp will allow us to calculate the cost of reaching top
-        // (with hopping over the highest stair semantic)
-        int[] dp = new int[costs.length];
+        // dp - for each index i stores min cost to step next to the topest staircase, for a staircase
+        // consisting of only i stairs
 
-        dp[0] = costs[0];
-        dp[1] = costs[0] + costs[1];
-        dp[2] = costs[0] + costs[2];
+        // so dp[0] will be null
+        // dp[1] == dp[2] == dp[3] = costs[0], as we start from 1-st stair and can leap over 2, and 3 without
+        // extra cost
+
+        // Note: keeping cost for "empty staircase" in element 0. Then dp[i] will semantically store solution
+        // for staircase of i stairs
+        int[] dp = new int[costs.length + 1];
+
+        dp[0] = 0;
+        dp[1] = costs[0];
+        dp[2] = costs[0];
+        dp[3] = costs[0];
 
         for (int i = 3; i < costs.length; i++) {
-            // we can reach the top either jumping off the current stair from (dp) of stair -1, or (dp) of stair -2
-            // (that is possible)
+            // calculating dp[i + 1], we can reach stair next to i + 1 in 3 ways:
+            //
+            // - if we step over stair i, then step stair i + 1, then next behind i + 1 => then dp[i] + costs[i]
+            //      (Note: costs[i] - is cost for stair i + 1 in fact, cause index starts from 0)
+            // - if we step over stair i - 1 that is stair i, then step over stair i + 1 => dp[i - 1] + costs [i -1]
+            // - if we step over stair i - 2 that is stair i - 1, then step over stairs i and i + 1 => dp[i - 2] + costs[i - 2]
             //
             // or through the current stair => then cost of current stair plus (dp) of stair -3
-            int c1 = dp[i-1];
-            int c2 = dp[i-2];
-            int c3 = dp[i-3] + costs[i];
-            dp[i] = Math.min(Math.min(c1, c2), c3);
+            int c1 = dp[i] + costs[i];
+            int c2 = dp[i - 1] + costs[i - 1];
+            int c3 = dp[i - 2] + costs[i - 2];
+            dp[i + 1] = Math.min(Math.min(c1, c2), c3);
         }
 
-        return dp[costs.length - 1];
+        return dp[dp.length - 1];
     }
 }
