@@ -1,7 +1,8 @@
-package codility;
+package repeat_practice.codility;
 
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -29,9 +30,25 @@ public class Task3_OddOccurencesInArray {
         return paired.iterator().next();
     }
 
+    public int solution2(int[] arr) {
+        Set<Integer> elements = new HashSet<>();
+        for (int next : arr) {
+            if (elements.contains(next)) {
+                elements.remove(next);
+            } else {
+                elements.add(next);
+            }
+        }
+        if (elements.size() != 1) {
+            System.out.println("Incorrect array given");
+            throw new IllegalArgumentException("Incorrect array given");
+        }
+        return (Integer) elements.toArray()[0];
+    }
+
     public static void main(String[] args) {
         Task3_OddOccurencesInArray oddOccurencesArray = new Task3_OddOccurencesInArray();
-        System.out.println(oddOccurencesArray.solution(new int[] {9,3,9,3,9,7,9}));
+        System.out.println(oddOccurencesArray.solution2(new int[] {9,3,9,3,9,7,9}));
 
     }
 }
