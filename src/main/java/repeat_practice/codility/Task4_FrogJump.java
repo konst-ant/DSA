@@ -1,4 +1,4 @@
-package codility;
+package repeat_practice.codility;
 
 
 public class Task4_FrogJump {
