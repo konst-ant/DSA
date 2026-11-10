@@ -13,6 +13,13 @@ import java.util.PriorityQueue;
  */
 public class NetworkDelayTime {
 
+    /**
+     *
+     * @param times array of {source_node, dest_node, time_to_reach}
+     * @param n overall amount of nodes in the graph
+     * @param k the start node for which we calc signal propagation, hence calcing Dijkstra itself
+     * @return
+     */
     public int networkDelayTime(int[][] times, int n, int k) {
         if (times == null) {
             throw new IllegalArgumentException("times must not be null");
@@ -37,6 +44,8 @@ public class NetworkDelayTime {
             graph.get(time[0]).add(new int[]{time[1], time[2]});
         }
 
+        // distance array - this keeps current minimum distance from start nod to every other node in the graph
+        // the unreachable graphs (at every step, and eventually) have distance infinity (MAX_VALUE)
         int[] dist = new int[n + 1];
         java.util.Arrays.fill(dist, Integer.MAX_VALUE);
         dist[k] = 0;
@@ -44,6 +53,12 @@ public class NetworkDelayTime {
         // Dijkstra with a min-heap always expands the closest known unvisited node next, giving
         // O(E log V) overall; since all weights are non-negative this reaches the optimum
         // without Bellman-Ford's O(V*E) full relaxation passes.
+        //
+        // Note: there are various implementations for Dijkstra which might be more optimal depending on the actual graph density etc.
+        // but PriorityQueue-base is the optimal general purpose algo. Also note that using PriorityQueue allow for exposing shorter
+        // paths first, so that stale records in queue (skipped with continue; below) don't come in the first place and thus we
+        // saving CPU w/o calculating on them. This is genuinely the property of Dijkstra algo itself to promote shortest paths found
+        // The suboptimal "stale" records may still accumulate in the queue, but they are lazily skipped later during queue exhaustion
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[1] - b[1]);
         minHeap.offer(new int[]{k, 0});
 
@@ -64,6 +79,7 @@ public class NetworkDelayTime {
             }
         }
 
+        // here we finally find the biggest of the shortest paths from start node, after Dijkstra is done
         int max = 0;
         for (int i = 1; i <= n; i++) {
             if (dist[i] == Integer.MAX_VALUE) {

@@ -95,7 +95,7 @@ A standalone, general-purpose list of 100 canonical problems representative of m
 70. Graph Valid Tree
 
 ## Advanced Graphs
-71. Network Delay Time 
+71. Network Delay Time *
 72. Alien Dictionary
 
 ## 1-D Dynamic Programming
