@@ -1,5 +1,10 @@
 package faang.arrayshashing;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * LeetCode 242: Valid Anagram.
  * Return true if string t is an anagram of string s.

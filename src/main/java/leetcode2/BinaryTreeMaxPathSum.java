@@ -31,29 +31,30 @@ public class BinaryTreeMaxPathSum {
     }
 
     public int maxPathSum(TreeNode root) {
-        TreeNode theMax = new TreeNode(Integer.MIN_VALUE);
-        maxPathSum(root, theMax);
-        return theMax.value;
+        if (root == null) {
+            throw new IllegalArgumentException("Tree cannot be null");
+        }
+
+        int[] max = {Integer.MIN_VALUE};
+        maxPathSum(root, max);
+        return max[0];
     }
 
-    public int maxPathSum(TreeNode node, TreeNode theMax) {
-        int left = 0;
-        int right = 0;
+    private int maxPathSum(TreeNode node, int[] max) {
+        if (node == null) {
+            return 0;
+        }
 
-        if (node.left != null) left = maxPathSum(node.left, theMax);
-        if (node.left != null) right = maxPathSum(node.right, theMax);
+        int left = Math.max(0, maxPathSum(node.left, max));
+        int right = Math.max(0, maxPathSum(node.right, max));
 
-        theMax.value = Collections.max(
-                Arrays.asList(node.value + left,
-                        node.value + right,
-                        node.value + left + right,
-                        left,
-                        right,
-                        theMax.value));
-        return Collections.max(
-                Arrays.asList(node.value + left,
-                        node.value + right));
+        // Maximum path that uses both branches (or neither)
+        int currentMax = node.value + left + right;
 
+        max[0] = Math.max(max[0], currentMax);
+
+        // Maximum single-branch path that can be extended by the parent
+        return node.value + Math.max(left, right);
     }
 
     public void run(TreeNode root) {
