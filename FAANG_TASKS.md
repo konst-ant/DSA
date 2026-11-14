@@ -87,19 +87,19 @@ I'd rather see you spend:
 
 ## Tries
 48. Implement Trie (Prefix Tree) *
-49. Design Add and Search Words Data Structure
-50. Word Search II
+49. Design Add and Search Words Data Structure *
+50. Word Search II *
 
 ## Heap / Priority Queue
 51. Kth Largest Element in an Array *
-52. Find Median from Data Stream
+52. Find Median from Data Stream *
 53. Task Scheduler
 54. K Closest Points to Origin
 55. Design Twitter
 
 ## Backtracking
 56. Subsets *
-57. Combination Sum
+57. Combination Sum *
 58. Permutations  *
 59. Subsets II
 60. Word Search
@@ -108,7 +108,7 @@ I'd rather see you spend:
 
 ## Graphs
 63. Number of Islands *
-64. Clone Graph
+64. Clone Graph *
 65. Max Area of Island
 66. Pacific Atlantic Water Flow
 67. Course Schedule
@@ -118,11 +118,11 @@ I'd rather see you spend:
 
 ## Advanced Graphs
 71. Network Delay Time *
-72. Alien Dictionary
+72. Alien Dictionary ?
 
 ## 1-D Dynamic Programming
 73. Climbing Stairs *
-74. House Robber
+74. House Robber *
 75. House Robber II
 76. Longest Palindromic Substring
 77. Decode Ways
