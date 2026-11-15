@@ -34,5 +34,13 @@ public class HouseRobberII {
         System.out.println(solution.rob(new int[]{2, 3, 2}));
         System.out.println(solution.rob(new int[]{1, 2, 3, 1}));
         System.out.println(solution.rob(new int[]{1, 2, 3}));
+
+        System.out.println("Check with same circle but from different perspectives e.g. break points (0, n-1), (1, 0) etc");
+        System.out.println(solution.rob(new int[]{2, 7, 9, 3, 1}));
+        System.out.println(solution.rob(new int[]{7, 9, 3, 1, 2}));
+        System.out.println(solution.rob(new int[]{9, 3, 1, 2, 7}));
+        System.out.println(solution.rob(new int[]{3, 1, 2, 7, 9}));
+        System.out.println(solution.rob(new int[]{1, 2, 7, 9, 3}));
+
     }
 }

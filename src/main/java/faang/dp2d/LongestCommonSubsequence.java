@@ -28,6 +28,7 @@ public class LongestCommonSubsequence {
 
     public static void main(String[] args) {
         LongestCommonSubsequence solution = new LongestCommonSubsequence();
+        System.out.println(solution.longestCommonSubsequence("abcd", "ac"));
         System.out.println(solution.longestCommonSubsequence("abcde", "ace"));
         System.out.println(solution.longestCommonSubsequence("abc", "abc"));
         System.out.println(solution.longestCommonSubsequence("abc", "def"));

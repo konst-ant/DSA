@@ -28,7 +28,7 @@ I'd rather see you spend:
 1. Two Sum *
 2. Contains Duplicate *
 3. Valid Anagram *
-4. Group Anagrams
+4. Group Anagrams *
 5. Top K Frequent Elements
 6. Product of Array Except Self
 7. Longest Consecutive Sequence
@@ -37,28 +37,28 @@ I'd rather see you spend:
 ## Two Pointers
 9. Valid Palindrome *
 10. 3Sum *
-11. Container With Most Water
+11. Container With Most Water *
 12. Trapping Rain Water
 13. Sort Colors
 
 ## Sliding Window
 14. Best Time to Buy and Sell Stock *
 15. Longest Substring Without Repeating Characters *
-16. Longest Repeating Character Replacement
+16. Longest Repeating Character Replacement *
 17. Permutation in String
 18. Minimum Window Substring
 
 ## Stack
 19. Valid Parentheses *
 20. Min Stack *
-21. Evaluate Reverse Polish Notation
+21. Evaluate Reverse Polish Notation *
 22. Generate Parentheses
 23. Daily Temperatures
 
 ## Binary Search
 24. Binary Search *
 25. Search in Rotated Sorted Array  *
-26. Find Minimum in Rotated Sorted Array
+26. Find Minimum in Rotated Sorted Array *
 27. Search a 2D Matrix
 28. Koko Eating Bananas
 29. Median of Two Sorted Arrays
@@ -66,7 +66,7 @@ I'd rather see you spend:
 ## Linked List
 30. Reverse Linked List *
 31. Merge Two Sorted Lists *
-32. Reorder List
+32. Reorder List *
 33. Remove Nth Node From End of List
 34. Linked List Cycle
 35. Merge k Sorted Lists
@@ -123,7 +123,7 @@ I'd rather see you spend:
 ## 1-D Dynamic Programming
 73. Climbing Stairs *
 74. House Robber *
-75. House Robber II
+75. House Robber II *
 76. Longest Palindromic Substring
 77. Decode Ways
 78. Coin Change
@@ -132,30 +132,30 @@ I'd rather see you spend:
 
 ## 2-D Dynamic Programming
 81. Unique Paths *
-82. Longest Common Subsequence
+82. Longest Common Subsequence *
 83. Best Time to Buy and Sell Stock with Cooldown
 84. Edit Distance
 85. Target Sum
 
 ## Greedy
 86. Maximum Subarray (Kadane's Algorithm) *
-87. Jump Game
+87. Jump Game *
 88. Jump Game II
 89. Gas Station
 
 ## Intervals
 90. Insert Interval *
-91. Merge Intervals
+91. Merge Intervals *
 92. Non-overlapping Intervals
 93. Meeting Rooms I / II
 
 ## Math & Geometry
 94. Rotate Image *
-95. Spiral Matrix
+95. Spiral Matrix *
 96. Set Matrix Zeroes
 
 ## Bit Manipulation
 97. Single Number *
-98. Number of 1 Bits
+98. Number of 1 Bits *
 99. Counting Bits
 100. Missing Number
