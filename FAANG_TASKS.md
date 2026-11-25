@@ -29,7 +29,7 @@ I'd rather see you spend:
 2. Contains Duplicate *
 3. Valid Anagram *
 4. Group Anagrams *
-5. Top K Frequent Elements
+5. Top K Frequent Elements *
 6. Product of Array Except Self
 7. Longest Consecutive Sequence
 8. Valid Sudoku
@@ -38,7 +38,7 @@ I'd rather see you spend:
 9. Valid Palindrome *
 10. 3Sum *
 11. Container With Most Water *
-12. Trapping Rain Water
+12. Trapping Rain Water 
 13. Sort Colors
 
 ## Sliding Window
@@ -76,8 +76,8 @@ I'd rather see you spend:
 ## Trees
 38. Invert Binary Tree *
 39. Maximum Depth of Binary Tree *
-40. Same Tree
-41. Subtree of Another Tree
+40. Same Tree *
+41. Subtree of Another Tree *
 42. Lowest Common Ancestor of a Binary Search Tree
 43. Binary Tree Level Order Traversal
 44. Validate Binary Search Tree
@@ -93,7 +93,7 @@ I'd rather see you spend:
 ## Heap / Priority Queue
 51. Kth Largest Element in an Array *
 52. Find Median from Data Stream *
-53. Task Scheduler
+53. Task Scheduler 
 54. K Closest Points to Origin
 55. Design Twitter
 
@@ -133,29 +133,29 @@ I'd rather see you spend:
 ## 2-D Dynamic Programming
 81. Unique Paths *
 82. Longest Common Subsequence *
-83. Best Time to Buy and Sell Stock with Cooldown
+83. Best Time to Buy and Sell Stock with Cooldown ?
 84. Edit Distance
 85. Target Sum
 
 ## Greedy
 86. Maximum Subarray (Kadane's Algorithm) *
 87. Jump Game *
-88. Jump Game II
+88. Jump Game II *
 89. Gas Station
 
 ## Intervals
 90. Insert Interval *
 91. Merge Intervals *
-92. Non-overlapping Intervals
+92. Non-overlapping Intervals *
 93. Meeting Rooms I / II
 
 ## Math & Geometry
 94. Rotate Image *
 95. Spiral Matrix *
-96. Set Matrix Zeroes
+96. Set Matrix Zeroes *
 
 ## Bit Manipulation
 97. Single Number *
 98. Number of 1 Bits *
-99. Counting Bits
+99. Counting Bits *
 100. Missing Number

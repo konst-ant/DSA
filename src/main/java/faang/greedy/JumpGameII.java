@@ -17,6 +17,11 @@ public class JumpGameII {
         for (int i = 0; i < nums.length - 1; i++) {
             farthest = Math.max(farthest, i + nums[i]);
             if (i == currentEnd) {
+                // We have exhausted the current reachable range.
+                // If the next range does not extend it, the end is unreachable.
+                if (farthest == currentEnd) {
+                    return -1;
+                }
                 jumps++;
                 currentEnd = farthest;
             }

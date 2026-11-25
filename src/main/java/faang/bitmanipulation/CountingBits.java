@@ -24,10 +24,26 @@ public class CountingBits {
         return result;
     }
 
+    // Even better ;))
+    public int[] countBitsBrianKernigans(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("n must be non-negative");
+        }
+
+        int[] result = new int[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            result[i] = result[i & (i - 1)] + 1;
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         CountingBits solution = new CountingBits();
         System.out.println(Arrays.toString(solution.countBits(2)));
         System.out.println(Arrays.toString(solution.countBits(5)));
+        System.out.println(Arrays.toString(solution.countBitsBrianKernigans(5)));
         System.out.println(Arrays.toString(solution.countBits(0)));
     }
 }
