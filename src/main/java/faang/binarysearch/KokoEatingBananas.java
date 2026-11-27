@@ -3,6 +3,8 @@ package faang.binarysearch;
 /**
  * LeetCode 875: Koko Eating Bananas.
  * Find the minimum integer eating speed so Koko can eat all banana piles within h hours.
+ * Koko chooses one pile at the beginning of each hour and eats only from that pile during that hour.
+ * If she finishes it before the hour ends, she does not start another pile — she waits for the next hour.
  * Precondition: piles must be non-null and non-empty, and h must be positive.
  */
 public class KokoEatingBananas {
@@ -22,12 +24,21 @@ public class KokoEatingBananas {
         // hoursNeeded(speed) is monotonically non-increasing in speed, so we can binary search for
         // the smallest speed that still satisfies the hour budget. This gives O(n log(max(piles)))
         // instead of a linear scan over every candidate speed.
+//        while (lo < hi) {
+//            int mid = lo + (hi - lo) / 2;
+//            if (hoursNeeded(piles, mid) <= h) {
+//                hi = mid;
+//            } else {
+//                lo = mid + 1;
+//            }
+//        }
+        // equivalent to commented above
         while (lo < hi) {
             int mid = lo + (hi - lo) / 2;
-            if (hoursNeeded(piles, mid) <= h) {
-                hi = mid;
-            } else {
+            if (hoursNeeded(piles, mid) > h) {
                 lo = mid + 1;
+            } else {
+                hi = mid;
             }
         }
         return lo;
@@ -36,7 +47,8 @@ public class KokoEatingBananas {
     private long hoursNeeded(int[] piles, int speed) {
         long hours = 0;
         for (int pile : piles) {
-            hours += (pile + speed - 1) / speed;
+            hours += (int) Math.ceil((double) pile / speed); // equivalent of the below to find the ceiling
+//            hours += (pile + speed - 1) / speed;
         }
         return hours;
     }

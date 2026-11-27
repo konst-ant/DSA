@@ -62,6 +62,7 @@ public class RemoveNthNodeFromEndOfList {
     public static void main(String[] args) {
         RemoveNthNodeFromEndOfList solution = new RemoveNthNodeFromEndOfList();
         System.out.println(toStr(solution.removeNthFromEnd(build(new int[]{1, 2, 3, 4, 5}), 2)));
+        System.out.println(toStr(solution.removeNthFromEnd(build(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}), 8)));
         System.out.println(toStr(solution.removeNthFromEnd(build(new int[]{1}), 1)));
         System.out.println(toStr(solution.removeNthFromEnd(build(new int[]{1, 2}), 1)));
     }

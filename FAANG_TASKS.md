@@ -38,39 +38,39 @@ I'd rather see you spend:
 9. Valid Palindrome *
 10. 3Sum *
 11. Container With Most Water *
-12. Trapping Rain Water 
+12. Trapping Rain Water *
 13. Sort Colors
 
 ## Sliding Window
 14. Best Time to Buy and Sell Stock *
 15. Longest Substring Without Repeating Characters *
 16. Longest Repeating Character Replacement *
-17. Permutation in String
+17. Permutation in String *
 18. Minimum Window Substring
 
 ## Stack
 19. Valid Parentheses *
 20. Min Stack *
 21. Evaluate Reverse Polish Notation *
-22. Generate Parentheses
+22. Generate Parentheses *
 23. Daily Temperatures
 
 ## Binary Search
 24. Binary Search *
 25. Search in Rotated Sorted Array  *
 26. Find Minimum in Rotated Sorted Array *
-27. Search a 2D Matrix
-28. Koko Eating Bananas
+27. Search a 2D Matrix *
+28. Koko Eating Bananas *
 29. Median of Two Sorted Arrays
 
 ## Linked List
 30. Reverse Linked List *
 31. Merge Two Sorted Lists *
 32. Reorder List *
-33. Remove Nth Node From End of List
-34. Linked List Cycle
-35. Merge k Sorted Lists
-36. Copy List with Random Pointer
+33. Remove Nth Node From End of List *
+34. Linked List Cycle *
+35. Merge k Sorted Lists * 
+36. Copy List with Random Pointer *
 37. LRU Cache
 
 ## Trees
@@ -78,11 +78,11 @@ I'd rather see you spend:
 39. Maximum Depth of Binary Tree *
 40. Same Tree *
 41. Subtree of Another Tree *
-42. Lowest Common Ancestor of a Binary Search Tree
-43. Binary Tree Level Order Traversal
-44. Validate Binary Search Tree
-45. Kth Smallest Element in a BST
-46. Binary Tree Maximum Path Sum
+42. Lowest Common Ancestor of a Binary Search Tree *
+43. Binary Tree Level Order Traversal *
+44. Validate Binary Search Tree *
+45. Kth Smallest Element in a BST *
+46. Binary Tree Maximum Path Sum *
 47. Serialize and Deserialize Binary Tree
 
 ## Tries
@@ -93,9 +93,9 @@ I'd rather see you spend:
 ## Heap / Priority Queue
 51. Kth Largest Element in an Array *
 52. Find Median from Data Stream *
-53. Task Scheduler 
-54. K Closest Points to Origin
-55. Design Twitter
+53. Task Scheduler *
+54. K Closest Points to Origin *
+55. Design Twitter *
 
 ## Backtracking
 56. Subsets *

@@ -33,12 +33,15 @@ public class CopyListWithRandomPointer {
             curr = copy.next;
         }
 
+        // Note, after stitching orig1 > copy1 > orig2 > copy2 ... we have all copies in place
+        // so with: curr.next.random = curr.random.next; - we setting random in the copy to the copy of "original random"
+        // i.e. to correct node
         curr = head;
         while (curr != null) {
             if (curr.random != null) {
                 curr.next.random = curr.random.next;
             }
-            curr = curr.next.next;
+            curr = curr.next.next; // jumb over copy node
         }
 
         Node newHead = head.next;
